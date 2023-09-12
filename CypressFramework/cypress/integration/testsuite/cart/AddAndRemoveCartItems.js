@@ -72,6 +72,7 @@ Then("I am able to remove the lowest price item from my cart", () => {
     .parents("td")
     .next()
     .click();
+  cy.get(".post").screenshot("failed");
 });
 
 Then("I am able to verify three items in my cart", () => {
