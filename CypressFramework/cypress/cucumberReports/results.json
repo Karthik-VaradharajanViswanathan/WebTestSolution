@@ -1,0 +1,100 @@
+[
+  {
+    "description": "    Application Katalon Shop",
+    "elements": [
+      {
+        "description": "",
+        "id": "to-check-the-user-ability-to-add-and-remove-an-item-from-cart;add-random-items-to-the-cart-and-remove-the-lowest-price-item-from-the-cart",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Add random items to the cart and remove the lowest price item from the cart",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I add four random items to my cart",
+            "result": {
+              "duration": 31088000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "When ",
+            "line": 7,
+            "name": "I view my cart",
+            "result": {
+              "duration": 4489000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I find total four items listed in my cart",
+            "result": {
+              "duration": 172000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "When ",
+            "line": 9,
+            "name": "I search for lowest price item",
+            "result": {
+              "duration": 295000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I am able to remove the lowest price item from my cart",
+            "result": {
+              "duration": 315000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I am able to verify three items in my cart",
+            "result": {
+              "duration": 5106000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          }
+        ],
+        "type": "scenario",
+        "tags": [
+          {
+            "line": 4,
+            "name": "@Smoke"
+          }
+        ]
+      }
+    ],
+    "id": "to-check-the-user-ability-to-add-and-remove-an-item-from-cart",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "To check the user ability to add and remove an item from cart",
+    "uri": "cypress\\integration\\testsuite\\cart.feature"
+  }
+]

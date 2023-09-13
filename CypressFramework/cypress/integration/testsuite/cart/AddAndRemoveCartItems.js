@@ -5,20 +5,18 @@ import CartPage from "../../../support/pageobjects/CartPage";
 //import CheckoutPage from "../../../support/pageobjects/CheckoutPage";
 
 let lowestPrice = null;
-
+const shopPage = new ShopPage();
+const cartPage = new CartPage();
 Given("I add four random items to my cart", () => {
-  const shopPage = new ShopPage();
   cy.visit(Cypress.env("url"));
   shopPage.ClickAddCartItems(); //working code but can handle the duplicate cart item
 });
 
 When("I view my cart", () => {
-  const shopPage = new ShopPage();
   shopPage.viewMyCart().eq(1).click();
 });
 
 Then("I find total four items listed in my cart", () => {
-  const cartPage = new CartPage();
   let totalSum = 0;
   cartPage
     .getCartSum()
@@ -74,6 +72,5 @@ Then("I am able to remove the lowest price item from my cart", () => {
 });
 
 Then("I am able to verify three items in my cart", () => {
-  const cartPage = new CartPage();
   cartPage.getFinalSum();
 });

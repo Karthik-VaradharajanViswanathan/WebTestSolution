@@ -3,6 +3,7 @@ const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify");
 
 async function setupNodeEvents(on, config) {
+  console.log("Setting up reporter...");
   // Preprocessor needs the config to generate the JSON reports.
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
 

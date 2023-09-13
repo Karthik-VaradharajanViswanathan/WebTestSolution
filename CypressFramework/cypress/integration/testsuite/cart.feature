@@ -1,7 +1,7 @@
 Feature: To check the user ability to add and remove an item from cart
 
     Application Katalon Shop
-    
+    @Smoke
     Scenario: Add random items to the cart and remove the lowest price item from the cart
     Given I add four random items to my cart
     When I view my cart

@@ -69,3 +69,4 @@ npm install -D cypress-iframe
 
 5. Cucumber reports
 https://github.com/cucumber/json-formatter
+https://www.npmjs.com/package/multiple-cucumber-html-reporter
