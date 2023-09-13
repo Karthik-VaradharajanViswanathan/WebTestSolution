@@ -5,7 +5,8 @@ class CartPage {
 
   getFinalSum() {
     let totalSum = 0;
-    cartPage;
+    // cartPage;
+    cy.wait(5000);
     this.getCartSum()
       .each(($inputElement) => {
         cy.wrap($inputElement)

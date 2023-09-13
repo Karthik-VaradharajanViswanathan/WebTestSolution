@@ -2,7 +2,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import ShopPage from "../../../support/pageobjects/ShopPage";
 import CartPage from "../../../support/pageobjects/CartPage";
-import CheckoutPage from "../../../support/pageobjects/CheckoutPage";
+//import CheckoutPage from "../../../support/pageobjects/CheckoutPage";
 
 let lowestPrice = null;
 
@@ -41,7 +41,6 @@ Then("I find total four items listed in my cart", () => {
 
 When("I search for lowest price item", () => {
   let prices = [];
-
   // Get all the elements with prices
   cy.get(".product-subtotal span").each(($element) => {
     cy.wrap($element)
@@ -57,22 +56,21 @@ When("I search for lowest price item", () => {
         if (!isNaN(price) && price > 0) {
           prices.push(price);
         }
-        prices.sort((a, b) => a - b);
-      });
 
-    cy.log("The sorted price from lowest to highest is :", prices);
-    lowestPrice = prices[0];
-    cy.log("The lowest sorted price is :", lowestPrice);
+        // Get the Lowest Price Item
+        lowestPrice = Math.min(...prices);
+        cy.log("The lowest price item :", lowestPrice);
+      });
   });
 });
 
 Then("I am able to remove the lowest price item from my cart", () => {
   cy.contains("span.woocommerce-Price-amount.amount", lowestPrice)
-    .parents("span")
-    .parents("td")
-    .next()
-    .click();
-  cy.get(".post").screenshot("failed");
+    .parent() // Yields parent class="product-price"
+    .siblings(".product-remove") // Yields sibling class="product-remove"
+    .find("a")
+    .scrollIntoView()
+    .click({ force: true }); // Clicks <a> with class="remove"
 });
 
 Then("I am able to verify three items in my cart", () => {
