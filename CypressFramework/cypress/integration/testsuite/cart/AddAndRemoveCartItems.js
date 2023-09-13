@@ -34,6 +34,7 @@ Then("I find total four items listed in my cart", () => {
       cy.log(
         `We have successfully added four items as per the requirement : Sum of cart items is  ${totalSum}`
       );
+      cy.wrap(totalSum).should("eq", 4);
     });
 });
 

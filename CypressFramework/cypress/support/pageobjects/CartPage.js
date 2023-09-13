@@ -22,6 +22,7 @@ class CartPage {
         cy.log(
           `We have successfully added three items as per the requirement : Sum of cart items is  ${totalSum}`
         );
+        cy.wrap(totalSum).should("eq", 3);
       });
   }
 }
