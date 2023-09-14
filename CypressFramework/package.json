@@ -1,7 +1,7 @@
 {
   "name": "cypressframework",
   "version": "1.0.0",
-  "description": "Framework_From_Scratch_Qualitest",
+  "description": "Framework_From_Scratch",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
