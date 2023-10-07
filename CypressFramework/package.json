@@ -1,7 +1,7 @@
 {
   "name": "cypressframework",
   "version": "1.0.0",
-  "description": "Framework_From_Scratch_Qualitest",
+  "description": "Cypress with js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,8 @@
   "author": "Karthik Varadharajan Viswanathan",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.17.4",
+    "cypress": "^12.0.0",
+    "cypress-xpath": "^2.0.1",
     "mocha": "^10.1.0",
     "multiple-cucumber-html-reporter": "^3.4.0"
   },
