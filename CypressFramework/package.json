@@ -1,11 +1,7 @@
 {
   "name": "cypressframework",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "Cypress with js",
-=======
   "description": "cypress with javascript",
->>>>>>> 5f6bf84bf7ff7033905f0f57f5338f3c8ec0806f
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
