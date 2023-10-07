@@ -27,7 +27,8 @@ function captureScreenshot(filename) {
 module.exports = defineConfig({
   defaultCommandTimeout: 10000,
   env: {
-    url: "https://cms.demo.katalon.com/",
+    // url: "https://cms.demo.katalon.com/",
+    url: "https://www.bing.com/translator",
   },
 
   retries: {
@@ -35,7 +36,8 @@ module.exports = defineConfig({
   },
   e2e: {
     setupNodeEvents,
-    specPattern: "cypress/integration/testsuite/*.feature",
-    //chromeWebSecurity: false,
+    specPattern: "cypress/integration/testsuite/bingTranslator.js",
+    //specPattern: "cypress/integration/testsuite/*.feature",
+    chromeWebSecurity: false,
   },
 });
