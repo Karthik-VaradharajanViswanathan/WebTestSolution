@@ -1,4 +1,4 @@
 {
-  "name": "Using fixtures to represent data",
-  "addToCart": "Add to cart"
+  "expectedCartToSelect": 4,
+  "FinalCartCount": 3
 }

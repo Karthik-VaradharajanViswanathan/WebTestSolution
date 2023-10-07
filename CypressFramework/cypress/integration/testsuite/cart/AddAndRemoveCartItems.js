@@ -2,12 +2,13 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import ShopPage from "../../../support/pageobjects/ShopPage";
 import CartPage from "../../../support/pageobjects/CartPage";
-//import CheckoutPage from "../../../support/pageobjects/CheckoutPage";
 
 let lowestPrice = null;
 const shopPage = new ShopPage();
 const cartPage = new CartPage();
-Given("I add four random items to my cart", () => {
+
+Given("I add four random items to my cart", function () {
+  debugger;
   cy.visit(Cypress.env("url"));
   shopPage.ClickAddCartItems(); //working code but can handle the duplicate cart item
 });
@@ -16,7 +17,7 @@ When("I view my cart", () => {
   shopPage.viewMyCart().eq(1).click();
 });
 
-Then("I find total four items listed in my cart", () => {
+Then("I find total four items listed in my cart", function () {
   let totalSum = 0;
   cartPage
     .getCartSum()
@@ -34,7 +35,9 @@ Then("I find total four items listed in my cart", () => {
       cy.log(
         `We have successfully added four items as per the requirement : Sum of cart items is  ${totalSum}`
       );
-      cy.wrap(totalSum).should("eq", 4);
+      //cy.pause();
+      cy.wrap(totalSum).should("eq", this.data.expectedCartToSelect);
+      expect(totalSum).to.equal(this.data.expectedCartToSelect);
     });
 });
 
@@ -63,15 +66,16 @@ When("I search for lowest price item", () => {
   });
 });
 
-Then("I am able to remove the lowest price item from my cart", () => {
+Then("I am able to remove the lowest price item from my cart", function () {
   cy.contains("span.woocommerce-Price-amount.amount", lowestPrice)
     .parent() // Yields parent class="product-price"
     .siblings(".product-remove") // Yields sibling class="product-remove"
     .find("a")
     .scrollIntoView()
     .click({ force: true }); // Clicks <a> with class="remove"
+  cy.wait(3000);
 });
 
-Then("I am able to verify three items in my cart", () => {
-  cartPage.getFinalSum();
+Then("I am able to verify three items in my cart", function () {
+  cartPage.getFinalSum(this.data.FinalCartCount);
 });

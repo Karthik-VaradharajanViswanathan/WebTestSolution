@@ -3,10 +3,8 @@ class CartPage {
     return cy.get(".product-quantity div input");
   }
 
-  getFinalSum() {
+  getFinalSum(finalCartCount) {
     let totalSum = 0;
-    // cartPage;
-    cy.wait(5000);
     this.getCartSum()
       .each(($inputElement) => {
         cy.wrap($inputElement)
@@ -22,7 +20,7 @@ class CartPage {
         cy.log(
           `We have successfully added three items as per the requirement : Sum of cart items is  ${totalSum}`
         );
-        cy.wrap(totalSum).should("eq", 3);
+        cy.wrap(totalSum).should("eq", finalCartCount);
       });
   }
 }
